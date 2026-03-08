@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shat – Discord-style Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="sidebar">
+      <div class="logo">Shat</div>
+      <div class="section-title">Channels</div>
+      <ul id="channel-list">
+        <li data-room="general" class="active"># general</li>
+        <li data-room="random"># random</li>
+        <li data-room="gaming"># gaming</li>
+        <li data-room="music"># music</li>
+      </ul>
+      <div class="user-info">
+        <span id="current-username"></span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="header">
+        <span id="current-room-name"># general</span>
+      </div>
+      <div class="content">
+        <div class="messages" id="messages"></div>
+        <div class="users-panel">
+          <div class="users-title">Online</div>
+          <ul id="user-list"></ul>
+        </div>
+      </div>
+      <form id="message-form" autocomplete="off">
+        <input
+          id="message-input"
+          type="text"
+          placeholder="Message #general"
+          required
+        />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
